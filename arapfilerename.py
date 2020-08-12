@@ -15,7 +15,7 @@ strCountriesAfter = ["com", "ca", "com.mx", "com.br", "co.uk", "fr", "es", "de",
 # List files
 fileList = os.listdir(os.getcwd())
 
-print ('directory: %s' %fileList)
+#print ('directory: %s' %fileList)
 
 for fileStr in fileList:
 	tarCountryIdx = -1
@@ -47,6 +47,9 @@ for fileStr in fileList:
 		dateObj = datetime.strptime("2020-"+dateStr, "%Y-%m-%d").date()
 		print("==> "+strCountriesAfter[tarCountryIdx]+strDataTypesAfter[tarDataTypeIdx]+str(dateObj)+"_to_"+str(dateObj)+".csv")
 		os.rename(fileStr,strCountriesAfter[tarCountryIdx]+strDataTypesAfter[tarDataTypeIdx]+str(dateObj)+"_to_"+str(dateObj)+".csv")
+	else:
+		print("==> ERROR! Data Type or Country no matched!!!")
+
 print("Done.")
 
 
