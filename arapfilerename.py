@@ -16,6 +16,8 @@ strCountriesAfter = ["com", "ca", "com.mx", "com.br", "co.uk", "fr", "es", "de",
 fileList = os.listdir(os.getcwd())
 
 #print ('directory: %s' %fileList)
+successCnt = 0
+failedCnt = 0
 
 for fileStr in fileList:
 	tarCountryIdx = -1
@@ -47,10 +49,18 @@ for fileStr in fileList:
 		dateObj = datetime.strptime("2020-"+dateStr, "%Y-%m-%d").date()
 		print("==> "+strCountriesAfter[tarCountryIdx]+strDataTypesAfter[tarDataTypeIdx]+str(dateObj)+"_to_"+str(dateObj)+".csv")
 		os.rename(fileStr,strCountriesAfter[tarCountryIdx]+strDataTypesAfter[tarDataTypeIdx]+str(dateObj)+"_to_"+str(dateObj)+".csv")
+		successCnt = successCnt + 1
 	else:
 		print("==> ERROR! Data Type or Country no matched!!!")
+		failedCnt = failedCnt + 1
 
 print("Done.")
+
+if (successCnt > 0):
+	print("Success files: " + str(successCnt))
+
+if (failedCnt > 0):
+	print("Failed files: " + str(failedCnt))
 
 
 
