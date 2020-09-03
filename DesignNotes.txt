@@ -1,0 +1,61 @@
+改名前
+
+三種資料
+
+Forecast and Inventory Planning_
+
+Inventory Health_
+
+Sales Diagnostic_Detail View_
+
+國家名
+
+GB
+FR
+ES
+DE
+IT
+US
+MX
+BR
+CA
+JP
+AU
+AE
+IN
+
+
+
+改名後
+
+三種資料類型
+
+-Sales Diagnostic_Detail View-Daily_(sp)_
+
+-Inventory Health-Daily_(sp)_
+
+-Forecast and Inventory Planning-Daily_(sp)_
+
+國家名
+
+com
+ca
+com.mx
+co.uk
+fr
+de
+es
+it
+in
+co.jp
+com.au
+br
+ae
+
+2020-07-08_to_2020-07-08
+
+程式拼圖
+
+str.find() 可以找出有沒有包含此字串，如果沒有回傳 -1 
+如果有，就可以重新組合"國家名" + "資料類型"
+
